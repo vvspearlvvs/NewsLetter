@@ -1,7 +1,6 @@
 import datetime
 import feedparser
 from googletrans import Translator
-import pandas as pd
 
 # crawling
 url = "https://aws.amazon.com/about-aws/whats-new/recent/feed/"

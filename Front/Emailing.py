@@ -5,13 +5,12 @@ from datetime import date,datetime, timedelta
 
 # basic information
 sender = "gg66477@gmail.com"
-receiver = "gg6647@naver.com"
+receiver_list = []
 password = "kzruxledhcemeueu"
 
 year = str(datetime.today().year)
 month = str(datetime.today().month)
 day = str(datetime.today().day)
-
 
 def get_week_no():
     target=datetime.now() #datetime
@@ -45,15 +44,9 @@ def create_html(document_list):
         html+='<br>'+content['ko_title'] +\
                   '<a href="'+content['link']+'"style="color:#FF9900;text-decoration: none;"> 더보기</a></h5>'\
                   '</div></body></html>'
-    send_email(html)
-    print("메일body : html형식")
+    return html
 
-def create_body(dataframe):
-    content= dataframe.to_html(escape=False)
-    send_email(content)
-    return "메일body : dataframe형식"
-
-def send_email(content):
+def send_email(content,receiver):
     # 메일콘텐츠 설정
     message = MIMEMultipart('alternative')
     message['Subject'] = "["+month+"월 "+str(get_week_no())+"주차] AWS What's New 소식"

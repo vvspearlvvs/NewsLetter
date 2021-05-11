@@ -1,30 +1,17 @@
-from pymongo import MongoClient
-
+import Database
 import Emailing
 import Crawling
 
-def connect_DB(host,port):
-    mongo = MongoClient(host, int(port))
-    print("DB Connect Success")
-    return mongo
-
-def insert_DB(document_list,collection):
-    for document in document_list:
-        collection.insert_one(document)
-    return "insert success"
-
-def find_DB(collection):
-    result = collection.find()
-    for i in result:
-        print(i)
-
-
 def main():
-    document_list = Crawling.get_crawling_aws()
-    print(document_list)
+    document_list = Crawling.get_crawling_aws() #aws데이터수집
+    Database.insert_data(document_list) #디비저장
 
-    #Emailing.create_html(document_list,post())
+    html = Emailing.create_html(document_list) #메일보낼준비-메일내용생성
 
+    email_list = Database.find_email('email') #메일보낼준비-수신자확인
+    for receiver in email_list:
+        receiver=receiver['email']
+        Emailing.send_email(html,receiver) #메일전송
 
 if __name__ == '__main__':
     main()
