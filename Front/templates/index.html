@@ -30,12 +30,13 @@
                                 매주 화요일 오전 10시, <br>
                                 <strong>AWS What's News</strong> 소식을 전달해드립니다.
                             </p>
+                            <form action="/post" method="post">
                             <div class="input-group input-group-newsletter">
-                                <form action="/post" method="post">
                                     <input class="form-control" type="email" name="email" placeholder="이메일을 입력하세요!" aria-label="Enter email..." aria-describedby="submit-button" />
-                                    <div class="input-group-append"><input class="btn btn-secondary" id="submit-button" type="submit" value="구독!" onclick="alert('구독신청완료!')"></div>
-                                </form>
+                                    <div class="input-group-append"><button class="btn btn-secondary" id="submit-button" type="submit" onclick="alert('구독신청이 완료되었습니다!')">구독신청!</button></div>
                             </div>
+                            </form>
+
                         </div>
                     </div>
                 </div>
