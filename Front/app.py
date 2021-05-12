@@ -17,4 +17,4 @@ def post():
 #특정시간이 되면 new.py 수행
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0',port='80')
