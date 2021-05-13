@@ -11,8 +11,9 @@ mysql_client = pymysql.connect(user=mysql_user,passwd=mysql_pwd,host=mysql_host,
 #input email data
 def insert_email(value1,value2):
     cursor = mysql_client.cursor(pymysql.cursors.Cursor)
-    input_sql="INSERT INTO emails values(?,?);"
-    cursor.execute(input_sql,(value1,value2))
+    input_sql="INSERT INTO emails values(%s,%s);"
+    val = (value1,value2)
+    cursor.execute(input_sql,val)
 
 def find_email():
     email_list = []
