@@ -1,7 +1,4 @@
 import pymysql
-import logging
-
-#mongodb
 mysql_host = 'localhost'
 mysql_user = 'root'
 mysql_pwd = ''
@@ -15,7 +12,6 @@ def insert_email(value1,value2):
     input_sql="INSERT INTO emails values(%s,%s);"
     val = (value1,value2)
     cursor.execute(input_sql,val)
-    logging.info("insert success!")
 
 def find_email():
     email_list = []
@@ -25,5 +21,4 @@ def find_email():
     receivers = cursor.fetchall()
     for receiver in receivers:
         email_list.append(receiver[0])
-    logging.info("select success!")
     return email_list

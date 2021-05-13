@@ -18,8 +18,5 @@ def post():
     MysqlDB.insert_email(value,nowDatetime)
     return render_template("index.html")
 
-#추가로, 올바른 이메일인지 확인하는 검증하는 시스템까지 넣기
-#특정시간이 되면 new.py 수행
-
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
