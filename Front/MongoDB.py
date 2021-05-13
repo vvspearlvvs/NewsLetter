@@ -1,10 +1,10 @@
 from pymongo import MongoClient
 
-# database
-host = "localhost"
-port = "27017"
+#mongodb
+mongodb_host = "localhost"
+mongodb_port = "27017"
 
-mongo_client = MongoClient(host, int(port))
+mongo_client = MongoClient(mongodb_host, int(mongodb_port))
 database = mongo_client.get_database('mydb')
 
 def connect_DB(host,port):
@@ -24,7 +24,7 @@ def find_DB(collection):
 
 #input crawling data
 def insert_data(document_list):
-    database = connect_DB(host,port)
+    database = connect_DB(mongodb_host,mongodb_port)
     aws_col = database.get_collection('aws') #있으면 안넣고, 없는 데이터만 넣기
     #collection.delete_many({})
 
@@ -33,7 +33,7 @@ def insert_data(document_list):
 
 #input email data
 def insert_email(email):
-    database = connect_DB(host,port)
+    database = connect_DB(mongodb_host,mongodb_port)
     email_col =database.get_collection('email')
 
     email_document={"email":email}
@@ -41,7 +41,7 @@ def insert_email(email):
     print("insert "+email_document['email']+" success!")
 
 def find_email(collection):
-    database = connect_DB(host,port)
+    database = connect_DB(mongodb_host,mongodb_port)
     email_col =database.get_collection(collection)
 
     result = email_col.find()
