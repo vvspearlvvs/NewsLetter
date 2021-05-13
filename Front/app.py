@@ -1,10 +1,10 @@
 import datetime
-import sqlite3
+from pytz import timezone
 import MysqlDB
 from flask import Flask,render_template,request
 app = Flask(__name__)
 
-now=datetime.datetime.now()
+now=datetime.datetime.now(timezone('Asia/Seoul'))
 nowDatetime = now.strftime('%Y-%m-%d %H:%M:%S')
 
 @app.route('/')
