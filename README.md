@@ -12,7 +12,7 @@ OS : Ubuntu 20.4 (EC2)  <br>
 DB : Mysql 5.7 <br>
 AWS Service : VPC,IGW,ALB,EC2,ROUTE53 <br>
 
-###기타1 : Python 패키지
+## 기타1 : Python 패키지
 pip3 install flask <br>
 pip3 install pytz <br>
 pip3 install datetime <br>
