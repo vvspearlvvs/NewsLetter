@@ -11,3 +11,22 @@ Web Framework : Flask <br>
 OS : Ubuntu 20.4 (EC2)  <br>
 DB : Mysql 5.7 <br>
 AWS Service : VPC,IGW,ALB,EC2,ROUTE53 <br>
+
+###기타1 : Python 패키지
+pip3 install flask <br>
+pip3 install pytz <br>
+pip3 install datetime <br>
+pip3 install feedparser <br>
+pip3 install googletrans==4.0.0-rc1 <br>
+pip3 install smtplib 
+pip3 install pymysql
+
+### 기타2 : Mysql SQL문
+mysql -u root -p <br>
+create database mydb <br>
+use mydb <br>
+create table emails <br>
+(emails varchar(256) primary key,sub_date datetime)
+
+### 기타3 : crontab (UTC기준)
+00 13 * * 2 ubuntu python3 /home/ubuntu/Newsletter/Front/new.app
