@@ -1,8 +1,8 @@
 import pymysql
 mysql_host = 'localhost'
 mysql_user = 'root'
-mysql_pwd = ''
-mysql_db = 'mydb'
+mysql_pwd = 'qwer1234'
+mysql_db = 'newdb'
 
 
 #input email data

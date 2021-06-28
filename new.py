@@ -1,5 +1,3 @@
-import MongoDB
-import sqlite3
 import MysqlDB
 import Emailing
 import Crawling
@@ -14,7 +12,7 @@ def main():
     email_list = MysqlDB.find_email()
     for email in email_list:
         #email=email['email']
-        Emailing.send_email(html,email) #메일전송-
+        Emailing.send_email(html, email) #메일전송-
 
 if __name__ == '__main__':
     main()
