@@ -45,7 +45,7 @@
 
 현재는 단순한 HTML포맷이지만, 카테고리별로 분류하는 등 가독성이 높은 메일포맷으로 변경예정이다.
 
-![image-20210624161933371](C:\Users\gg664\AppData\Roaming\Typora\typora-user-images\image-20210624161933371.png)
+![image-20210624161933371](https://user-images.githubusercontent.com/78723318/123601604-d812b080-d832-11eb-8036-5921f5a5ccb5.png)
 
 
 
