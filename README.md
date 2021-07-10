@@ -3,7 +3,7 @@
 <hr>
 
 전체적인 진행과정은 블로그에서 확인할 수 있습니다: https://pearlluck.tistory.com/notice/479
-추가) master브랜치 : Docker기반 ELK구축 
+<br> **(추가) master브랜치 : Docker기반 ELK구축 **
 
 ### 개요
 구독이메일을 신청받는 Flask기반 웹서비스와 AWS의 새로운 소식을 매주 전달해주는 서비스 개발 및 AWS 운영
@@ -49,7 +49,7 @@
 ![image-20210624161933371](https://user-images.githubusercontent.com/78723318/123601604-d812b080-d832-11eb-8036-5921f5a5ccb5.png)
 
 
-### 추가진행예정 
+### 보완할점
 - 단순한 HTML포맷 -> 카테고리별로 분류하는 등 가독성이 높은 메일포맷 변경 
 - email전송 -> AWS SQS 서비스 기반 이메일 전송
 - ELK스택을 사용한 웹로그 분석
