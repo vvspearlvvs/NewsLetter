@@ -3,7 +3,7 @@
 <hr>
 
 전체적인 진행과정은 블로그에서 확인할 수 있습니다: https://pearlluck.tistory.com/notice/479
-<br> **(추가) master브랜치 : Docker기반 ELK구축 **
+<br> **참고) Docker기반 ELK구축 저장을 위한 브랜치(elk)추가 **
 
 ### 개요
 구독이메일을 신청받는 Flask기반 웹서비스와 AWS의 새로운 소식을 매주 전달해주는 서비스 개발 및 AWS 운영
