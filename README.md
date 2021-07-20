@@ -1,9 +1,12 @@
 ## AWS 뉴스구독 서비스와 ELK 웹로그추척
 
-구독이메일을 신청받는 웹서비스와 AWS의 새로운 소식을 매주 전달해주는 서비스 개발 및 AWS 운영
 <hr>
 
 전체적인 진행과정은 블로그에서 확인할 수 있습니다: https://pearlluck.tistory.com/notice/479
+<br> **참고) Docker기반 ELK구축 저장을 위한 브랜치(elk)추가 **
+
+### 개요
+구독이메일을 신청받는 Flask기반 웹서비스와 AWS의 새로운 소식을 매주 전달해주는 서비스 개발 및 AWS 운영
 
 
 ### 프로젝트 기간
@@ -22,12 +25,12 @@
 
 ### 수행역할
 
-- Python기반 Flask웹개발 및 AWS What'new 크롤링,이메일전송 서비스 구현
-- AWS EC2, VPC, Route53, ELB 등 AWS환경구축 및 AWS운영
+- 구독 이메일을 신청 받을 수 있는 Flask 웹서비스 개발
+- AWS What'new 소식을 크롤링하여 매주 이메일을 전달해주는 Python기반 서비스 개발
+- AWS EC2, VPC, Route53, ELB 등 AWS환경구축 및 서비스 운영
 - 서비스 기획부터 개발과 운영 그리고 유지보수까지 진행
 
-
-### 전체적인 구조
+### 아키텍쳐
 
 1. 구독자가 http://www.what-news.shop 에 접속하여 이메일 구독 신청<br> (5월30일기준, 비용문제로 서비스중지)
 
@@ -43,32 +46,10 @@
 
 웹을 통해 구독을 신청한 이메일로 일정한 날짜와 시간이 되면, 자동으로 AWS 신규소식 메일을 전송한다.
 
-현재는 단순한 HTML포맷이지만, 카테고리별로 분류하는 등 가독성이 높은 메일포맷으로 변경예정이다.
-
-![image-20210624161933371](C:\Users\gg664\AppData\Roaming\Typora\typora-user-images\image-20210624161933371.png)
+![image-20210624161933371](https://user-images.githubusercontent.com/78723318/123601604-d812b080-d832-11eb-8036-5921f5a5ccb5.png)
 
 
-
-### 기타
-
-1. **사용한 Python 패키지**
-
-   pip3 install flask <br>
-   pip3 install pytz <br>
-   pip3 install datetime <br>
-   pip3 install feedparser <br>
-   pip3 install googletrans==4.0.0-rc1 <br>
-   pip3 install smtplib
-   pip3 install pymysql
-
-2. **사용된 Mysql SQL문**
-
-   mysql -u root -p <br>
-   create database mydb <br>
-   use mydb <br>
-   create table emails <br>
-   (emails varchar(256) primary key,sub_date datetime)
-
-3. **crontab (UTC기준)****
-
-   00 13 * * 2 ubuntu python3 /home/ubuntu/Newsletter/Front/new.app
+### 보완할점
+- 단순한 HTML포맷 -> 카테고리별로 분류하는 등 가독성이 높은 메일포맷 변경 
+- email전송 -> AWS SQS 서비스 기반 이메일 전송
+- ELK스택을 사용한 웹로그 분석
