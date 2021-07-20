@@ -1,6 +1,7 @@
 import datetime
 from pytz import timezone
-import MysqlDB
+from FlaskWeb import MysqlDB
+import MongoDB
 from flask import Flask,render_template,request
 app = Flask(__name__)
 
@@ -14,8 +15,8 @@ def index():
 @app.route('/post',methods=['POST'])
 def post():
     value=request.form['email']
-    #MongoDB.insert_email(value)
-    MysqlDB.insert_email(value, nowDatetime)
+    MongoDB.insert_email(value)
+    #MysqlDB.insert_email(value, nowDatetime)
     return render_template("index.html")
 
 if __name__ == '__main__':
